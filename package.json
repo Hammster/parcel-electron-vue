@@ -1,0 +1,34 @@
+{
+  "name": "electron-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron dist/",
+    "build": "yarn build:main && yarn build:render",
+    "build:main": "parcel build src/main/index.js --target node",
+    "build:render": "parcel build src/render/index.pug --target electron --public-url ./ --bundle-node-modules --no-content-hash=true",
+    "dev": "yarn build:main && yarn watch",
+    "watch": "parcel watch src/render/index.pug --target electron --public-url ./ --bundle-node-modules"
+  },
+  "dependencies": {
+    "electron": "^5.0.2",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel": "^1.12.3",
+    "parcel-plugin-static-files-copy": "^2.1.1",
+    "pug": "^2.0.3",
+    "sass": "^1.20.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "watcherGlob": "**"
+  },
+  "alias": {
+    "components/*": "src/render/components"
+  }
+}
