@@ -7,9 +7,9 @@
     "start": "electron dist/",
     "build": "yarn build:main && yarn build:render",
     "build:main": "parcel build src/main/index.js --target node",
-    "build:render": "parcel build src/render/index.pug --target electron --public-url ./ --bundle-node-modules --no-content-hash=true",
+    "build:render": "parcel build src/render/index.pug --target electron --public-url ./ --no-content-hash=true",
     "dev": "yarn build:main && yarn watch",
-    "watch": "parcel watch src/render/index.pug --target electron --public-url ./ --bundle-node-modules"
+    "watch": "parcel watch src/render/index.pug --target electron --public-url ./"
   },
   "dependencies": {
     "electron": "^5.0.2",
